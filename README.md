@@ -13,28 +13,17 @@ The VM is set to use the default switch. The host is connected to a network and 
 
 Is it working? If not, continue to step 2.
 
-### Step 2: connect the VM to an external network
-I have encountered numerous situations where the VM refuses to use the default switch until after it is permitted to connect directly to an external network. You may be able to get this step to work by using "Not connected" as the VMs network adapter, but I have not had a lot of luck with that.
+### Step 2: restart the default switch
 
-  1) Set the VM to use a virtual switch of type "External network"
-  2) Wait 30 seconds
-  3) Set the VM to use the default switch
-
-Is it working? If not, continue to step 3.
-
-### Step 3: connect the VM to an external network and restart the default switch
-This is the same as step 2, but you disable the default switch device in between.
-
-  1) Set the VM to use a virtual switch of type "External network"
+  1) Set the VM's network adapter to "Not connected"
   2) In "Network connections", disable the device "vEthernet (Default Switch)"
   3) Wait 30 seconds
   4) In "Network connections", enable the device "vEthernet (Default Switch)"
   5) Set the VM to use the default switch
 
-Is it working? If not, continue to step 4.
+Is it working? If not, try step 2 again, but connect the VM to an external network instead of setting its network adapter to "Not connected". Still not working? Continue to step 3.
 
-### Step 4: use another network adapter on the host
-If the host is connected to the network via WiFi, turn off WiFi and connect via Ethernet instead, etc.
+### Step 3: use another network adapter on the host
 
   1) Disconnect the host from the network
   2) Connect the host to the network using another adapter (e.g. Ethernet if using WiFi before)
@@ -42,7 +31,7 @@ If the host is connected to the network via WiFi, turn off WiFi and connect via 
   4) Disconnect the host from the network
   5) Connect the host to the network using the original adapter
 
-Is it working? If not, continue to step 5.
+Is it working? If not, continue to step 4.
 
-### Step 5: restart the host
+### Step 4: restart the host
 If the default switch is not working by this point, the last step I know is to restart the host computer.
