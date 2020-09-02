@@ -1,7 +1,7 @@
 # Hyper-V Troubleshooting
-Steps and techniques that I use daily when Hyper-V networking remembers that it doesn't actually work in a desktop virtualization context.
+Steps and techniques that I use when Hyper-V networking isn't working properly.
 
-These steps assume that Hyper-V networking is generally work for you and you've encountered a temporary issue. This is not intended as a guide for configuring Hyper-V Networking.
+These steps assume that Hyper-V networking is generally working for you and you've encountered a temporary issue. This is not intended as a guide for configuring Hyper-V Networking.
 
 ## VM is set to use the Default Switch but is not getting an IP address.
 The VM is set to use the default switch. The host is connected to a network and may be able to access the internet. However, the VM cannot access the internet or any other network devices. If you run `ipconfig` in CMD, you can see that the VM has an APIPA address (169.254.\*.\*), meaning DHCP is not working.
